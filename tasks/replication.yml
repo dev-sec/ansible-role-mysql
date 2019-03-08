@@ -27,7 +27,7 @@
   tags: ['skip_ansible_galaxy']
 
 - name: Check master replication status.
-  mysql_replication: 
+  mysql_replication:
     mode: getmaster
     login_unix_socket: "{{ login_unix_socket | default(omit) }}"
   delegate_to: "{{ mysql_replication_master }}"
@@ -55,7 +55,7 @@
     - (mysql_replication_master | length) > 0
 
 - name: Start replication.
-  mysql_replication: 
+  mysql_replication:
     mode: startslave
     login_unix_socket: "{{ login_unix_socket | default(omit) }}"
   when:
