@@ -1,12 +1,11 @@
 ---
 - name: Check if MySQL is already installed.
-  stat:
-    path: /etc/init.d/mysql
+  stat: path=/etc/init.d/{{ mysql_daemon }}
   register: mysql_installed
 
 - name: Update apt cache if MySQL is not yet installed.
-  apt:
-    update_cache: yes
+  apt: update_cache=yes
+  changed_when: False
   when: not mysql_installed.stat.exists
 
 - name: Determine required MySQL Python libraries.
