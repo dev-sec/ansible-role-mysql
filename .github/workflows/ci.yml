@@ -47,6 +47,7 @@ jobs:
           - ubuntu1804
           - debian10
           - debian11
+          - opensuse
 
     steps:
       - name: Check out the codebase.
