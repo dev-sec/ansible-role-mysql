@@ -4,7 +4,7 @@
   become: true
 
   roles:
-    - role: devsec.mysql
+    - role: geerlingguy.mysql
 
   post_tasks:
     - name: Make sure we can connect to MySQL via Unix socket.
