@@ -1,7 +1,6 @@
 ---
 - name: Ensure MySQL packages are installed.
-  yum:
+  ansible.builtin.package:
     name: "{{ mysql_packages }}"
     state: present
-    enablerepo: "{{ mysql_enablerepo | default(omit, true) }}"
   register: suse_mysql_install_packages
