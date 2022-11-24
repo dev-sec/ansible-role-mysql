@@ -1,6 +1,7 @@
 ---
 __mysql_daemon: mariadb
 __mysql_packages:
+  - python3-mysqlclient
   - mariadb
   - mariadb-client
   - python3-PyMySQL
