@@ -1,0 +1,11 @@
+---
+
+- name: Configure python3 on Suse
+  hosts: all
+  become: true
+  tasks:
+    - name: Use Python 3 on Suse
+      set_fact:
+        ansible_python_interpreter: /usr/bin/python3
+      when:
+        - ansible_distribution == 'Suse'
