@@ -78,3 +78,12 @@ jobs:
           PY_COLORS: '1'
           ANSIBLE_FORCE_COLOR: '1'
           MOLECULE_DISTRO: ${{ matrix.distro }}
+        if: not ${{ startsWith(matrix.distro, 'opensuse') }}
+
+      - name: Run Molecule tests on OpenSUSE.
+        run: molecule test
+        env:
+          PY_COLORS: '1'
+          ANSIBLE_FORCE_COLOR: '1'
+          MOLECULE_DISTRO: ${{ matrix.distro }}
+        if: ${{ startsWith(matrix.distro, 'opensuse') }}
