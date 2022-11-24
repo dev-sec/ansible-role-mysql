@@ -4,7 +4,7 @@ __mysql_packages:
   - mariadb
   - mariadb-client
   - python3-PyMySQL
-  - perl-DBD-MySQL
+  - perl-DBD-mysql
 __mysql_slow_query_log_file: /var/log/mysql-slow.log
 __mysql_log_error: /var/log/mysql/mysqld.log
 __mysql_syslog_tag: mariadb
