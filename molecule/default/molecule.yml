@@ -11,7 +11,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     privileged: true
     pre_build_image: true
-    when: 'not "suse" in ${MOLECULE_DISTRO}'
+    when: "${MOLECULE_DISTRO}" != "opensuse"
 provisioner:
   name: ansible
   playbooks:
