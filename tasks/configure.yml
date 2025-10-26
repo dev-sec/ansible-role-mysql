@@ -64,7 +64,7 @@
   args:
     creates: "{{ mysql_log_error }}"
   when:
-    - mysql_log | default(true)
+    - mysql_log | length > 0 | default(true)
     - mysql_log_error | length > 0 | default(false)
   tags: ['skip_ansible_galaxy']
 
@@ -76,7 +76,7 @@
     group: "{{ mysql_log_file_group }}"
     mode: 0640
   when:
-    - mysql_log | default(true)
+    - mysql_log | length > 0 | default(true)
     - mysql_log_error | length > 0 | default(false)
   tags: ['skip_ansible_galaxy']
 
