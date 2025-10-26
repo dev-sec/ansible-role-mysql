@@ -65,7 +65,7 @@
     creates: "{{ mysql_log_error }}"
   when:
     - mysql_log | default(true)
-    - mysql_log_error | default(false)
+    - mysql_log_error | length > 0 | default(false)
   tags: ['skip_ansible_galaxy']
 
 - name: Set ownership on error log file (if configured).
@@ -77,7 +77,7 @@
     mode: 0640
   when:
     - mysql_log | default(true)
-    - mysql_log_error | default(false)
+    - mysql_log_error | length > 0 | default(false)
   tags: ['skip_ansible_galaxy']
 
 - name: Ensure MySQL is started and enabled on boot.
